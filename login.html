@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/adbe202ff0.js" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 0) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        function toggleDropdown() {
+            const dropdownContent = document.getElementById('dropdown-content');
+            if (dropdownContent.style.display === 'block') {
+                dropdownContent.style.display = 'none';
+            } else {
+                dropdownContent.style.display = 'block';
+            }
+        }
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const darkModeButton = document.getElementById('toggle-dark-mode');
+            darkModeButton.addEventListener('click', toggleDarkMode);
+        });
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <nav>
+            <img src="./logo.jpg" alt="Logo" class="logo">
+            <ul class="nav-links">
+                <i class="fa-regular fa-sun" style="color: white;" id="toggle-dark-mode"></i>
+                <li><a href="index.html">Эхлэл</a></li>
+                <li><a href="movies.html">Захиалга</a></li>
+                <li><a href="login.html">Нэвтрэх</a></li>   
+            </ul>
+            <div class="dropdown">
+                <button class="dropdown-btn" onclick="toggleDropdown()">☰</button>
+                <div id="dropdown-content" class="dropdown-content">
+                    <i class="fa-regular fa-sun" id="toggle-dark-mode"></i>
+                    <a href="index.html">Эхлэл</a>
+                    <a href="movies.html">Захиалга</a>
+                    <a href="login.html">Нэвтрэх</a>
+                   
+                </div>
+            </div>
+    </nav>
+</header>
+    <article class="login-box">
+            <form id="login-form">
+                <h2>Нэвтрэх</h2>
+                <div>
+                    <input type="email" id="email" placeholder="Цахим шуудан" required>
+                </div>
+                <div>
+                    <input type="password" id="password" placeholder="Нууц үг" required>
+                </div>
+                <button type="submit">Нэвтрэх</button>
+                <p><a href="forgot-password.html">Нууц үг мартсан</a></p>
+                <p>Бүртгэл байхгүй юү? <a href="signup.html">Бүртгэл үүсгэх</a></p>
+            </form>
+    </article>
+    
+    <script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Төлбөр төлөх</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+h1{
+    color: black;
+}
+
+.payment-container, .order-container {
+    background-color: white;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.payment-container h1, .order-container h1 {
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 24px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 0.5em;
+    color: #333;
+}
+
+input {
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 0.75em;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.payment-details {
+    margin: 1em 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.payment-details p {
+    margin: 0.5em 0;
+}
+
+    </style>
+</head>
+<body>
+    <article class="payment-container">
+        <h1>Төлбөр төлөх</h1>
+        <form action="/submit-payment" method="post">
+            <label for="card-number">Картын дугаар</label>
+            <input type="text" id="card-number" name="card-number" required>
+            
+            <label for="card-name">Карт эзэмшигчийн нэр</label>
+            <input type="text" id="card-name" name="card-name" required>
+            
+            <label for="expiry-date">Дуусах хугацаа</label>
+            <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+            
+            <label for="cvv">CVV код</label>
+            <input type="text" id="cvv" name="cvv" required>
+            
+            <div class="payment-details">
+                <p>Гүйлгээний дугаар: 2024192610508054</p>
+                <p>Мерчант: Prime Cineplex</p>
+                <p>Дүн: 60000.00 MNT</p>
+            </div>
+            
+            <button type="submit">Төлөх</button>
+        </form>
+    </article>
+</body>
+</html>
